@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Inventario</string>
+
+    <string name="abrir">Abrir</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="usuario">Usuario</string>
+    <string name="clave">Clave</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="version">V1.0</string>
+</resources>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/content_padding_left"
+    android:paddingEnd="@dimen/content_padding_right">
+
+    <ImageView
+        android:id="@+id/IMGMedidores"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/baseline_list_alt_black_48" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:id="@+id/space2"
+        android:layout_below="@+id/IMGMedidores"
+        android:layout_alignParentStart="true"
+        android:layout_height="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/textView"
+        android:layout_below="@+id/space2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/activity_text_size_small"
+        android:text=" "
+        android:id="@+id/LBUsuarioCodigo"
+        android:layout_below="@+id/space2"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_text_height"
+        android:paddingLeft="@dimen/activity_text_padding"
+        android:paddingRight="@dimen/activity_text_padding"
+        android:id="@+id/EDTUsuarioCodigo"
+        android:layout_below="@+id/LBUsuarioCodigo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/text_border_selector"
+        android:hint="@string/usuario"
+        android:drawableLeft="@drawable/ic_person_12dp"
+        android:drawablePadding="5dp"
+        android:digits="0123456789"
+        android:textSize="30dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/activity_text_padding"
+        android:text=" "
+        android:textColor="@color/alert"
+        android:id="@+id/MSJUsuarioCodigo"
+        android:layout_below="@+id/EDTUsuarioCodigo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textSize="@dimen/activity_text_size_small"
+        android:id="@+id/LBUsuarioClave"
+        android:layout_below="@+id/MSJUsuarioCodigo"
+        android:layout_alignParentStart="true" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_text_height"
+        android:paddingLeft="@dimen/activity_text_padding"
+        android:paddingRight="@dimen/activity_text_padding"
+        android:id="@+id/EDTUsuarioClave"
+        android:layout_below="@+id/LBUsuarioClave"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/text_border_selector"
+        android:hint="@string/clave"
+        android:drawableLeft="@drawable/ic_password_12dp"
+        android:drawablePadding="5dp"
+        android:digits="0123456789"
+        android:textSize="30dp"
+        android:inputType="numberPassword"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/activity_text_padding"
+        android:text=" "
+        android:textColor="@color/alert"
+        android:id="@+id/MSJUsuarioClave"
+        android:layout_below="@+id/EDTUsuarioClave"
+        android:layout_centerHorizontal="true" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/MSJUsuarioClave"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space4" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/MSJUsuarioClave"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space5" />
+
+
+    <LinearLayout
+        android:id="@+id/CNTBotones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/space5">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/BTNLogin"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/RoyalBlue"
+                android:textColor="@color/White"
+                android:text="@string/ingresar"
+                android:textAllCaps="false"
+                android:textSize="@dimen/activity_button_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAlignment="textEnd"
+        android:text=""
+        android:id="@+id/TVNumeroSerie"
+        android:layout_below="@+id/CNTBotones" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAlignment="textEnd"
+        android:text="@string/version"
+        android:id="@+id/Version"
+        android:layout_below="@+id/TVNumeroSerie" />
+
+</RelativeLayout>

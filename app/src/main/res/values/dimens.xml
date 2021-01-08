@@ -1,0 +1,36 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Dimen Content Activity -->
+    <dimen name="content_padding_left">16dp</dimen>
+    <dimen name="content_padding_right">16dp</dimen>
+    <dimen name="content_padding_top">56dp</dimen>
+    <dimen name="content_padding_bottom">32dp</dimen>
+
+    <!--botones -->
+    <dimen name="activity_button_height">45dp</dimen>
+    <dimen name="activity_button_border">1dp</dimen>
+    <dimen name="activity_button_radius">2dp</dimen>
+    <dimen name="activity_button_text_size">20dp</dimen>
+
+    <!--Dimen espacios -->
+    <dimen name="espacio_30">30dp</dimen>
+    <dimen name="espacio_15">15dp</dimen>
+    <dimen name="menu_espacio_15">15dp</dimen>
+
+    <!-- texto -->
+    <dimen name="activity_text_cantidad_height">90dp</dimen>
+    <dimen name="activity_text_height">55dp</dimen>
+    <dimen name="activity_text_border">1sp</dimen>
+    <dimen name="activity_text_radius">1sp</dimen>
+    <dimen name="activity_text_size_small">15sp</dimen>
+    <dimen name="activity_text_size_list">20sp</dimen>
+    <dimen name="activity_text_size_big">45sp</dimen>
+    <dimen name="activity_text_size_med">30sp</dimen>
+    <dimen name="activity_text_padding">10sp</dimen>
+    <dimen name="activity_text_size_nombre_usuario">20sp</dimen>
+
+</resources>

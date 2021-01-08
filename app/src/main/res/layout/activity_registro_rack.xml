@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/content_padding_left"
+    android:paddingEnd="@dimen/content_padding_right">
+
+    <TextView
+        android:id="@+id/TVUsuarioNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/activity_text_size_nombre_usuario"
+        android:textAlignment="textEnd"
+        />
+    <TextView
+        android:id="@+id/TVFechaActual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/activity_text_size_small"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/TVUsuarioNombre"
+        />
+    <Button
+        android:id="@+id/BTNRack"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="25dp"
+        android:textColor="@color/White"
+        android:backgroundTint="@color/DimGray"
+        android:layout_below="@+id/TVFechaActual"
+        android:text="CAPTURAR UBICACIÓN" />
+
+    <TextView
+        android:id="@+id/TVRackDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@+id/BTNRack"
+        android:textAlignment="center"
+        android:text=""
+        />
+
+    <Button
+        android:id="@+id/BTNProducto"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="25dp"
+        android:backgroundTint="@color/DimGray"
+        android:textColor="@color/White"
+        android:layout_below="@+id/TVRackDesc"
+        android:text="CAPTURAR PRODUCTO"/>
+
+    <TextView
+        android:id="@+id/TVProductoDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@+id/BTNProducto"
+        android:textAlignment="center"
+        android:text=""
+        />
+
+    <LinearLayout
+        android:id="@+id/LLRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TVProductoDesc"
+    >
+
+      <EditText
+            android:id="@+id/EDTCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:paddingLeft="@dimen/activity_text_padding"
+            android:paddingRight="@dimen/activity_text_padding"
+            android:layout_centerHorizontal="true"
+            android:hint="CANTIDAD"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:drawablePadding="5dp"
+            android:digits="0123456789"
+            android:inputType="number"
+        />
+
+        <Button
+            android:id="@+id/BTNAceptar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textSize="25dp"
+            android:backgroundTint="@color/RoyalBlue"
+            android:textColor="@color/White"
+            android:layout_below="@+id/TVRackDesc"
+            android:text="ACEPTAR"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/LVRackProductos"
+        android:layout_below="@+id/LLRegistrar"
+        android:divider="@drawable/list_divider"></ListView>
+
+
+</RelativeLayout>
