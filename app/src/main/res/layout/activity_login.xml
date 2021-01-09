@@ -2,6 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,7 +17,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/baseline_list_alt_black_48" />
+        app:srcCompat="@drawable/inventario"
+        tools:srcCompat="@drawable/inventario" />
 
 
     <Space
@@ -56,7 +58,7 @@
         android:drawableLeft="@drawable/ic_person_12dp"
         android:drawablePadding="5dp"
         android:digits="0123456789"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:inputType="number"/>
 
     <TextView
@@ -93,7 +95,7 @@
         android:drawableLeft="@drawable/ic_password_12dp"
         android:drawablePadding="5dp"
         android:digits="0123456789"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:inputType="numberPassword"/>
 
     <TextView

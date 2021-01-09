@@ -156,7 +156,6 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
-
                 RequestParams params = new RequestParams();
                 params.put("codigo",UsuarioCodigo);
                 params.put("clave",UsuarioClave);
@@ -169,7 +168,9 @@ public class Login extends AppCompatActivity {
                 cliente.post(Login.this,  APPHelper.getUrl()+"/api/auth/" , params, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int i, Header[] headers, byte[] bytes) {
+
                         try {
+
                             System.out.println(new String(bytes));
                             JSONObject jsonRootObject = new JSONObject(new String(bytes));
                             JSONObject usuario = (JSONObject) jsonRootObject.get("usuario");
@@ -203,6 +204,8 @@ public class Login extends AppCompatActivity {
                     }
 
                 });
+
+
 
             }
 

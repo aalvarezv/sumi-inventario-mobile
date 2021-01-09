@@ -2,10 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "cl.suministra.inventario"
-        minSdkVersion 21
+        minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -32,10 +31,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation files('libs/android-async-http-1.4.9.jar')
     implementation files('libs/httpclient-4.3.6.jar')
-    implementation 'com.karumi:dexter:5.0.0'
-    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    //implementation 'com.karumi:dexter:5.0.0'
 
 }

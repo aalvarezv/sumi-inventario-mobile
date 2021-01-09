@@ -18,7 +18,7 @@ public class APPHelper {
     public static String nombre_usuario = "";
     public static String token = "";
     //public static String url = "https://192.168.1.85:3002";
-    public static String url = "https://factoria.suministra.cl/apirest-inventario";
+    public static String url = "http://factoria.suministra.cl/apirest-inventario";
     public static String numero_serie = "";
 
     static Date date = new Date();
