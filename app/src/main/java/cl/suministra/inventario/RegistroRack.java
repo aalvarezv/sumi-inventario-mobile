@@ -155,6 +155,8 @@ public class RegistroRack extends AppCompatActivity{
                 seleccionaRack(valor);
                 break;
             case "PRODUCTO":
+                codigoProductoSelect = "";
+                TVProductoDesc.setText("");
                 seleccionaProducto(valor);
                 break;
         }
@@ -168,12 +170,16 @@ public class RegistroRack extends AppCompatActivity{
 
         rackProductosList.clear();
 
+        RequestParams params = new RequestParams();
+        params.put("codigo",codigo_rack);
+        params.put("codigo_usuario",APPHelper.getCodigo_usuario());
+
         AsyncHttpClient cliente = new AsyncHttpClient();
         cliente.setConnectTimeout(5000);
         cliente.setResponseTimeout(5000);
         cliente.setMaxRetriesAndTimeout(0, 5000);
 
-        cliente.get(RegistroRack.this,  APPHelper.getUrl()+"/api/rack/"+codigo_rack+"/"+APPHelper.getCodigo_usuario() , new AsyncHttpResponseHandler() {
+        cliente.get(RegistroRack.this,  APPHelper.getUrl()+"/api/rack/", params , new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
                 try {
@@ -231,12 +237,16 @@ public class RegistroRack extends AppCompatActivity{
 
     public void seleccionaProducto(final String codigo_producto){
 
+
+        RequestParams params = new RequestParams();
+        params.put("codigo",codigo_producto);
+
         AsyncHttpClient cliente = new AsyncHttpClient();
         cliente.setConnectTimeout(5000);
         cliente.setResponseTimeout(5000);
         cliente.setMaxRetriesAndTimeout(0, 5000);
 
-        cliente.get(RegistroRack.this,  APPHelper.getUrl()+"/api/producto/"+codigo_producto , new AsyncHttpResponseHandler() {
+        cliente.get(RegistroRack.this,  APPHelper.getUrl()+"/api/producto/", params , new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
                 try {

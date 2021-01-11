@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
@@ -159,6 +160,7 @@ public class Login extends AppCompatActivity {
                 RequestParams params = new RequestParams();
                 params.put("codigo",UsuarioCodigo);
                 params.put("clave",UsuarioClave);
+                params.put("codigo_maquina",APPHelper.getNumero_serie());
 
                 AsyncHttpClient cliente = new AsyncHttpClient();
                 cliente.setConnectTimeout(5000);
@@ -231,6 +233,7 @@ public class Login extends AppCompatActivity {
     }
 
     boolean doubleBackToExitPressedOnce = false;
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
