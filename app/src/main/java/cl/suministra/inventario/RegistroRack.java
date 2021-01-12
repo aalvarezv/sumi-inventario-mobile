@@ -390,17 +390,23 @@ public class RegistroRack extends AppCompatActivity{
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] bytes, Throwable error) {
 
+                BTNRack.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
+                BTNProducto.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                BTNProductoManual.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                BTNAceptar.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                EDTCantidad.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+
+                if(statusCode == 0){
+                    Util.alertDialog(RegistroRack.this, "ERROR "+statusCode, error.getMessage());
+                    return;
+                }
+
                 try {
+
                     JSONObject jsonRootObject = new JSONObject(new String(bytes));
                     String mensaje = (String) jsonRootObject.get("msg");
-                    BTNRack.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
-                    BTNProducto.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    BTNProductoManual.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    BTNAceptar.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    EDTCantidad.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-
-
                     Util.alertDialog(RegistroRack.this,"ERROR: "+statusCode, mensaje);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Util.alertDialog(RegistroRack.this,"ERROR",e.getMessage());
@@ -447,17 +453,21 @@ public class RegistroRack extends AppCompatActivity{
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] bytes, Throwable error) {
 
+                BTNRack.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                BTNProducto.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
+                BTNProductoManual.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
+                BTNAceptar.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                EDTCantidad.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+
+                if(statusCode == 0){
+                    Util.alertDialog(RegistroRack.this, "ERROR "+statusCode, error.getMessage());
+                    return;
+                }
 
                 try {
 
                     JSONObject jsonRootObject = new JSONObject(new String(bytes));
                     String mensaje = (String) jsonRootObject.get("msg");
-                    BTNRack.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    BTNProducto.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
-                    BTNProductoManual.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
-                    BTNAceptar.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    EDTCantidad.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-
                     Util.alertDialog(RegistroRack.this,"ERROR: "+statusCode, mensaje);
 
                 } catch (JSONException e) {
@@ -497,6 +507,7 @@ public class RegistroRack extends AppCompatActivity{
         params.put("codigo",codigoProductoSelect);
         params.put("codigo_rack",codigoRackSelect);
         params.put("codigo_usuario", APPHelper.getCodigo_usuario());
+        params.put("codigo_maquina", APPHelper.getNumero_serie());
         params.put("cantidad", productoCant);
 
         AsyncHttpClient cliente = new AsyncHttpClient();
@@ -537,6 +548,11 @@ public class RegistroRack extends AppCompatActivity{
                     BTNAceptar.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
                     EDTCantidad.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
 
+                    EDTCantidad.setText("1");
+                    EDTCantidad.setSelection(EDTCantidad.getText().length());
+                    TVProductoDesc.setText("");
+                    codigoProductoSelect = "";
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Util.alertDialog(RegistroRack.this,"ERROR", e.getMessage());
@@ -548,16 +564,21 @@ public class RegistroRack extends AppCompatActivity{
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] bytes, Throwable error) {
 
+                BTNRack.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                BTNProducto.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                BTNProductoManual.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
+                BTNAceptar.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
+                EDTCantidad.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
+
+                if(statusCode == 0){
+                    Util.alertDialog(RegistroRack.this, "ERROR "+statusCode, error.getMessage());
+                    return;
+                }
+
                 try {
 
                     JSONObject jsonRootObject = new JSONObject(new String(bytes));
                     String mensaje = (String) jsonRootObject.get("msg");
-                    BTNRack.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    BTNProducto.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    BTNProductoManual.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorDefault, PorterDuff.Mode.SRC));
-                    BTNAceptar.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
-                    EDTCantidad.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(colorRojo, PorterDuff.Mode.SRC));
-
                     Util.alertDialog(RegistroRack.this,"ERROR: "+statusCode, mensaje);
 
                 } catch (JSONException e) {
@@ -569,10 +590,7 @@ public class RegistroRack extends AppCompatActivity{
 
         });
 
-        EDTCantidad.setText("1");
-        EDTCantidad.setSelection(EDTCantidad.getText().length());
-        TVProductoDesc.setText("");
-        codigoProductoSelect = "";
+
 
     }
 

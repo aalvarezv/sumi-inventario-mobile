@@ -194,6 +194,11 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] bytes, Throwable error) {
 
+                        if(statusCode == 0){
+                            Util.alertDialog(Login.this, "ERROR "+statusCode, error.getMessage());
+                            return;
+                        }
+
                         try {
                             JSONObject jsonRootObject = new JSONObject(new String(bytes));
                             String mensaje = (String) jsonRootObject.get("msg");
